@@ -4,10 +4,10 @@ self.addEventListener('install', event => {
       return cache.addAll([
         '/',
         '/index.html',
-        '/main.css',
-        '/main.js',
+        '/assets/css/main.css',
+        '/assets/js/main.js',
         '/assets/img/CC1trim.png',
-        '/assets/img/apple-touch-icon.png'
+        '/assets/img/CC1.png'
       ]);
     })
   );
