@@ -234,6 +234,21 @@ section {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
+  .topbar .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .topbar .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .topbar .contact-info a {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+  .topbar .social-links {
+    margin-top: 10px;
+  }
 }
 
 /*--------------------------------------------------------------
