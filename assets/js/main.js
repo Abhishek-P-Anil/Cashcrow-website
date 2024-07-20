@@ -22,6 +22,24 @@ if ('serviceWorker' in navigator) {
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 
+  // Lazy load images
+  const lazyLoadImages = document.querySelectorAll('img[data-src]');
+
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  lazyLoadImages.forEach(img => {
+    imageObserver.observe(img);
+  });
+
   /**
    * Preloader
    */
@@ -305,6 +323,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+
+
+
+
+
 
 
 
