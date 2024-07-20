@@ -5,6 +5,20 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+// Service Worker registration code
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').then(registration => {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, err => {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 
@@ -310,13 +324,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// Service Worker registration code
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').then(registration => {
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, err => {
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
+
+
+
+
+
+
+
+
+
+
+
